@@ -13,8 +13,9 @@ def child_login():
 @app.route("/c_login", methods= ['POST'])
 def c_login():
     child = Child.get_child_by_username({"username": request.form['username']})
+    print(child)
     if child:
-        session['username'] = Child.username
+        session['username'] =  child.username
         return redirect("/c_dashboard")
     else:
         flash("Please login with a valid username and password!")
@@ -22,12 +23,12 @@ def c_login():
     
 @app.route("/c_dashboard")
 def one_child():
-    c = Child.get_child_with_chores({"username": session['username']})
+    c = Child.get_child_with_chores(session['username'])
+    print(c)
     if 'username' in session:
-        print (c)
-    return render_template("c_dashboard.html", cur_child = c)
+        return render_template("c_dashboard.html", cur_child = c)
 
 @app.route("/c_logout")
 def c_logout():
-    session.clear
+    session.pop('username')
     return redirect("/login/child")

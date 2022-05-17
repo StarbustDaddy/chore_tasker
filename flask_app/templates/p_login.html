@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chore Tasker - Parent Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <img src="{{ url_for('static', filename='img/chore.jpg') }}" width="600px">
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif%}
+
+    <div class="container">
+        <form class="form_area" action="/p_login" method = "POST">
+            <div><h1>Welcome to Chore Tasker</h1></div>
+            <h3>Parent Login</h3>
+            <div>
+                <label for="email">Email</label>
+                <input type="text" name="email">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password">
+            </div>
+            <input class="buttons" type="submit" value="Login">
+        </form>
+        <div>
+            <p>First time user?<span><a href="/"> Click here.</a></span></p>
+        </div>
+        <div>
+            <p>Looking for your chore?<span><a href="/login/child"> Click here</a></span></p>
+        </div>
+    </div>
+</body>
+</html>

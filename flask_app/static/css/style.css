@@ -1,0 +1,54 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: repeating-conic-gradient(yellow, rgb(190, 190, 217));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.form_area {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    position: absolute; right: 10%; top: 10px;
+}
+
+.heading {
+    display: inline-flexbox;
+    align-self: flex-start;
+}
+
+.buttons {
+    width: 60px;
+}
+
+div {
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.chore_container {
+    display: flex;
+    flex-direction: row;
+    align-self:flex-end;
+}
+
+table {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+a {
+    color: black;
+}
